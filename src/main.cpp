@@ -151,10 +151,13 @@ int main(int argc, char *argv[])
         qWarning() << "Cannot init app components!";
         return EXIT_FAILURE;
     }
-
+#define FORCE_MOBILE_UI
 #if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     ShareUtils *utilsShare = new ShareUtils();
 #else
+#ifdef FORCE_MOBILE_UI
+    ShareUtils *utilsShare = new ShareUtils();
+#endif
     app.setWindowIcon(QIcon(":/assets/gfx/logos/watchflower.svg"));
 
     SystrayManager *st = SystrayManager::getInstance();
