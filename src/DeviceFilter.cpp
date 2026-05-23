@@ -130,7 +130,6 @@ QHash <int, QByteArray> DeviceModel::roleNames() const
     roles[DeviceRssiRole] = "rssi";
 
     roles[AssociatedLocationRole] = "location";
-    roles[AssociatedNameRole] = "plant";
     roles[ManualIndexRole] = "manual";
 
     roles[PlantNameRole] = "plant";
@@ -247,13 +246,6 @@ QVariant DeviceModel::data(const QModelIndex &index, int role) const
                 return "zzz";
             else
                 return device->getLocationName().toLower();
-        }
-        if (role == AssociatedNameRole)
-        {
-            if (device->getAssociatedName().isEmpty())
-                return "zzz";
-            else
-                return device->getAssociatedName();
         }
         // plant sensors
         if (role == PlantNameRole)

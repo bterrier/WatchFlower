@@ -83,7 +83,6 @@ public:
         // user set
         ManualIndexRole,
         AssociatedLocationRole,
-        AssociatedNameRole,
         // plant sensors
         PlantNameRole,
         SoilMoistureRole,
