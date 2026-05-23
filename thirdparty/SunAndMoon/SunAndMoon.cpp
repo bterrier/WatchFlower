@@ -49,9 +49,6 @@ bool SunAndMoon::isValid() const
         }
     }
 
-    qWarning() << "SunAndMoon::isValid() ERROR invalid latitude or longitude"
-               << m_latitude_saved << m_longitude_saved;
-
     return false;
 }
 
