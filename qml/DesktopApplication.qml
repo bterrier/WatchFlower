@@ -308,7 +308,7 @@ ApplicationWindow {
         onActivated: deviceManager.refreshDevices_start()
     }
     Shortcut {
-        sequence: StandardKey.Preferences
+        sequences: [StandardKey.Preferences]
         onActivated: screenSettings.loadScreen()
     }
     Shortcut {
